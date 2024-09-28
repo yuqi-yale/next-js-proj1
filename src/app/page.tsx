@@ -3,11 +3,11 @@ import { Icons } from "@/data/data";
 import { useEffect, useState } from "react";
 
 const Picture = [
-  { pos: '/images/bg1.PNG' },
-  { pos: '/images/bg2.PNG' },
-  { pos: '/images/bg3.PNG' },
-  { pos: '/images/bg4.PNG' },
-  { pos: '/images/bg5.PNG' },
+  { pos: '/images/1.jpeg' },
+  { pos: '/images/2.jpeg' },
+  { pos: '/images/3.jpeg' },
+  { pos: '/images/4.jpeg' },
+  { pos: '/images/5.jpeg' },
 ]
 
 function getTodayDateKey() {

@@ -1,13 +1,13 @@
 import { Icons } from "@/data/data";
+import Image from "next/image";
 
 const Picture = [
-  { pos: '/images/bg1.PNG' },
-  { pos: '/images/bg2.PNG' },
-  { pos: '/images/bg3.PNG' },
-  { pos: '/images/bg4.PNG' },
-  { pos: '/images/bg5.PNG' },
+  { pos: '/images/1.jpeg' },
+  { pos: '/images/2.jpeg' },
+  { pos: '/images/3.jpeg' },
+  { pos: '/images/4.jpeg' },
+  { pos: '/images/5.jpeg' },
 ]
-
 function getRandomImage() {
   const randomIndex = Math.floor(Math.random() * Picture.length);
   return Picture[randomIndex].pos;
@@ -22,13 +22,11 @@ export default function page() {
       style={{ backgroundImage: `url(${randomImage})` }}
     >
       <div className="flex space-x-20 mb-16">
-
         {Icons.map((icon, index) => (
           <a href={icon.herf} className="flex flex-col items-center"  key={index}>
           <icon.pos className="w-6 h-6"/>
         </a>
         ))}
-
       </div>
     </div>
   );
