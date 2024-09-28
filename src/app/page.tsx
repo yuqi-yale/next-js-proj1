@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Picture = [
-  { pos: 'https://next-js-proj1.vercel.app/images/bg1.PNG' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg2.PNG' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg3.PNG' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg4.PNG' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg5.PNG' },
+  { pos: '/images/bg1.PNG' },
+  { pos: '/images/bg2.PNG' },
+  { pos: '/images/bg3.PNG' },
+  { pos: '/images/bg4.PNG' },
+  { pos: '/images/bg5.PNG' },
 ]
 
 function getTodayDateKey() {
@@ -55,11 +55,6 @@ export default function HomePage() {
             </a>
           ))}
 
-        </div>
-        <div>
-          <Image width={500} height={500} src={'https://next-js-proj1.vercel.app/images/bg1.PNG'} alt="">
-
-          </Image>
         </div>
       </div>
 

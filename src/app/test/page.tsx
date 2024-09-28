@@ -1,11 +1,11 @@
 import { Icons } from "@/data/data";
 
 const Picture = [
-  {pos: '/images/bg1.png'},
-  {pos: '/images/bg2.png'},
-  {pos: '/images/bg3.png'},
-  {pos: '/images/bg4.png'},
-  {pos: '/images/bg5.png'},
+  { pos: '/images/bg1.PNG' },
+  { pos: '/images/bg2.PNG' },
+  { pos: '/images/bg3.PNG' },
+  { pos: '/images/bg4.PNG' },
+  { pos: '/images/bg5.PNG' },
 ]
 
 function getRandomImage() {
