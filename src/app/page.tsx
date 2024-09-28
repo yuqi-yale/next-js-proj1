@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Picture = [
-  { pos: 'https://next-js-proj1.vercel.app/images/bg1.png' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg2.png' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg3.png' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg4.png' },
-  { pos: 'https://next-js-proj1.vercel.app/images/bg5.png' },
+  { pos: 'https://next-js-proj1.vercel.app/images/bg1.PNG' },
+  { pos: 'https://next-js-proj1.vercel.app/images/bg2.PNG' },
+  { pos: 'https://next-js-proj1.vercel.app/images/bg3.PNG' },
+  { pos: 'https://next-js-proj1.vercel.app/images/bg4.PNG' },
+  { pos: 'https://next-js-proj1.vercel.app/images/bg5.PNG' },
 ]
 
 function getTodayDateKey() {
@@ -43,10 +43,10 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* <div
+      <div
         className="flex items-end justify-center h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
-      > */}
+      >
         <div className="flex space-x-20 mb-16">
 
           {Icons.map((icon, index) => (
@@ -55,9 +55,9 @@ export default function HomePage() {
             </a>
           ))}
 
-        {/* </div> */}
+        </div>
         <div>
-          <Image width={500} height={500} src={'https://next-js-proj1.vercel.app/images/bg1.png'} alt="">
+          <Image width={500} height={500} src={'https://next-js-proj1.vercel.app/images/bg1.PNG'} alt="">
 
           </Image>
         </div>
