@@ -3,18 +3,17 @@ import { Icons } from "@/data/data";
 import { useEffect, useState } from "react";
 
 const Picture = [
-  {pos: '/images/bg1.png'},
-  {pos: '/images/bg2.png'},
-  {pos: '/images/bg3.png'},
-  {pos: '/images/bg4.png'},
-  {pos: '/images/bg5.png'},
+  {pos: 'https://next-js-proj1.vercel.app/images/bg1.png'},
+  {pos: 'https://next-js-proj1.vercel.app/images/bg2.png'},
+  {pos: 'https://next-js-proj1.vercel.app/images/bg3.png'},
+  {pos: 'https://next-js-proj1.vercel.app/images/bg4.png'},
+  {pos: 'https://next-js-proj1.vercel.app/images/bg5.png'},
 ]
 
 function getTodayDateKey() {
   const today = new Date();
   return today.toISOString().split('T')[0];
 }
-
 
 function getRandomImage() {
   const randomIndex = Math.floor(Math.random() * Picture.length);
