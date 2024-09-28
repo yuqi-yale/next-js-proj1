@@ -43,10 +43,10 @@ export default function HomePage() {
 
   return (
     <div>
-      <div
+      {/* <div
         className="flex items-end justify-center h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      > */}
         <div className="flex space-x-20 mb-16">
 
           {Icons.map((icon, index) => (
@@ -55,9 +55,9 @@ export default function HomePage() {
             </a>
           ))}
 
-        </div>
+        {/* </div> */}
         <div>
-          <Image width={500} height={500} src='/images/bg1.png' alt="">
+          <Image width={500} height={500} src={'/images/bg1.png'} alt="">
 
           </Image>
         </div>
