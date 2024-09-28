@@ -2,6 +2,7 @@
 import { Icons } from "@/data/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import image1 from '/images/bg1.png';
 
 const Picture = [
   { pos: 'https://next-js-proj1.vercel.app/images/bg1.png' },
@@ -57,7 +58,7 @@ export default function HomePage() {
 
         </div>
         <div>
-          <Image width={500} height={500} src='/images/bg1.png' alt="">
+          <Image width={500} height={500} src={image1} alt="">
 
           </Image>
         </div>
