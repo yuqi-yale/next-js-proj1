@@ -1,6 +1,14 @@
 "use client"
-import { Icons, Picture } from "@/data/data";
+import { Icons } from "@/data/data";
 import { useEffect, useState } from "react";
+
+const Picture = [
+  {pos: '/images/bg1.png'},
+  {pos: '/images/bg2.png'},
+  {pos: '/images/bg3.png'},
+  {pos: '/images/bg4.png'},
+  {pos: '/images/bg5.png'},
+]
 
 function getTodayDateKey() {
   const today = new Date();

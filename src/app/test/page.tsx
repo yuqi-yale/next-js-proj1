@@ -1,4 +1,12 @@
-import { Icons, Picture } from "@/data/data";
+import { Icons } from "@/data/data";
+
+const Picture = [
+  {pos: '/images/bg1.png'},
+  {pos: '/images/bg2.png'},
+  {pos: '/images/bg3.png'},
+  {pos: '/images/bg4.png'},
+  {pos: '/images/bg5.png'},
+]
 
 function getRandomImage() {
   const randomIndex = Math.floor(Math.random() * Picture.length);
