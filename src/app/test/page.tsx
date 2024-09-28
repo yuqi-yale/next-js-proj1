@@ -1,5 +1,4 @@
 import { Icons } from "@/data/data";
-import Image from "next/image";
 
 const Picture = [
   { pos: '/images/1.jpeg' },
