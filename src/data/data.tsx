@@ -13,6 +13,6 @@ export const Icons = [
   },
   {
     pos: icon3,
-    herf: 'https://www.google.com',
+    herf: '/test',
   },
 ]
