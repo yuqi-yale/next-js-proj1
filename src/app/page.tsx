@@ -2,7 +2,7 @@
 import { Icons } from "@/data/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import image1 from '/public/images/bg1.png';
+import image1 from '/images/bg1.png';
 
 const Picture = [
   { pos: 'https://next-js-proj1.vercel.app/images/bg1.png' },
