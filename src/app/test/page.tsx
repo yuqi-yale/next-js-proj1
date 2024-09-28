@@ -1,11 +1,5 @@
 import { Icons, Picture } from "@/data/data";
 
-
-const images = [
-  '/images/bg1.png',
-  '/images/bg2.png',
-];
-
 function getRandomImage() {
   const randomIndex = Math.floor(Math.random() * Picture.length);
   return Picture[randomIndex].pos;
