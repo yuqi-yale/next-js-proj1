@@ -1,6 +1,5 @@
 "use client"
 import { Icons } from "@/data/data";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Picture = [
