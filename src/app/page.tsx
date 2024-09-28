@@ -50,7 +50,7 @@ export default function HomePage() {
 
           {Icons.map((icon, index) => (
             <a href={icon.herf} className="flex flex-col items-center" key={index}>
-              <icon.pos className="w-6 h-6" />
+              <icon.pos className="w-8 h-8 fill-zinc-200" />
             </a>
           ))}
 

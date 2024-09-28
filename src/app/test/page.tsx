@@ -23,7 +23,7 @@ export default function page() {
       <div className="flex space-x-20 mb-16">
         {Icons.map((icon, index) => (
           <a href={icon.herf} className="flex flex-col items-center"  key={index}>
-          <icon.pos className="w-6 h-6"/>
+          <icon.pos className="w-8 h-8"/>
         </a>
         ))}
       </div>
