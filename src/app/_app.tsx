@@ -1,20 +1,6 @@
-import { AppProps } from "next/app";
 import Script from "next/script";
-import { useEffect, useRef } from "react";
 
-function usePrevious(value: string) {
-  let ref = useRef<string>();
-
-  useEffect(() => {
-      ref.current = value;
-  }, [value]);
-
-  return ref.current;
-}
-
-export default function App({ Component, pageProps, router }: AppProps) {
-  let previousPathname = usePrevious(router.pathname);
-
+export default function App() {
   return (
       <>
           <Script
