@@ -8,6 +8,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/bible_verse',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
