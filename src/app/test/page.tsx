@@ -23,12 +23,14 @@ export default function Page() {
       className="flex items-end justify-center h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${randomImage})` }}
     >
-      <div className="flex space-x-20 mb-16">
+      <div className="flex space-x-20 mb-6">
+
         {Icons.map((icon, index) => (
-          <a href={icon.herf} className="flex flex-col items-center"  key={index}>
-          <icon.pos className="w-8 h-8 fill-zinc-200" />
-        </a>
+          <a href={icon.herf} className="flex flex-col items-center" key={index}>
+            <icon.pos className="w-8 h-8 fill-zinc-200 stroke-zinc-200"/>
+          </a>
         ))}
+
       </div>
     </div>
   );
