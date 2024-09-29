@@ -12,7 +12,7 @@ const Picture = [
 
 function getTodayDateKey() {
   const today = Date();
-  return Date().split('202')[0];
+  return today.split('202')[0];
 }
 
 function getRandomImage(): string {
