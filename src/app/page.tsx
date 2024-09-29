@@ -11,27 +11,37 @@ const Picture = [
 ]
 
 function getTodayDateKey() {
-  const today = new Date();
-  return today.toISOString().split('T')[0];
+  const today = Date();
+  return Date().split('202')[0];
 }
 
-function getRandomImage() {
+function getRandomImage(): string {
   const randomIndex = Math.floor(Math.random() * Picture.length);
   return Picture[randomIndex].pos;
 }
 
+function encryptImageName(imageName: string): string {
+  return window.btoa(imageName); // Base64 encode
+}
+
+function decryptImageName(encryptedImageName: string): string {
+  return window.atob(encryptedImageName); // Base64 decode
+}
+
 export default function HomePage() {
-  const [backgroundImage, setBackgroundImage] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState<string>('');
 
   useEffect(() => {
     const todayKey = getTodayDateKey();
-    const storedImage = localStorage.getItem(todayKey);
+    const storedEncryptedImageName = localStorage.getItem(todayKey);
 
-    if (storedImage) {
-      setBackgroundImage(storedImage);
+    if (storedEncryptedImageName) {
+      const decryptedImageName = decryptImageName(storedEncryptedImageName);
+      setBackgroundImage(decryptedImageName);
     } else {
       const randomImage = getRandomImage();
-      localStorage.setItem(todayKey, randomImage);
+      const encryptedImageName = encryptImageName(randomImage);
+      localStorage.setItem(todayKey, encryptedImageName);
       setBackgroundImage(randomImage);
     }
   }, []);
