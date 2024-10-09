@@ -53,11 +53,11 @@ export default function HomePage() {
         className="flex items-end justify-center h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="grid-cols-3 flex space-x-2 mb-6 justify-items-center">
+        <div className="grid-cols-3 flex space-x-0 mb-6 justify-items-center">
 
           {Icons.map((icon, index) => (
             <a href={icon.herf} className="flex flex-col items-center" key={index}>
-              <icon.pos className="w-24 h-8 fill-zinc-200 stroke-zinc-200" />
+              <icon.pos className="w-32 h-8 fill-zinc-200 stroke-zinc-200" />
             </a>
           ))}
 
