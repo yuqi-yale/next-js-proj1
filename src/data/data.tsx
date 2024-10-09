@@ -5,14 +5,14 @@ import { iconlogo_white } from "@/Icons/iconlogo_white"
 export const Icons = [
   {
     pos: icon2,
-    herf: 'https://www.google.com',
+    herf: 'https://ginnliandluck.com/',
   },
   {
     pos: iconlogo_white,
-    herf: 'https://www.google.com',
+    herf: 'https://ginnliandluck.com/',
   },
   {
     pos: icon3,
-    herf: '/test',
+    herf: 'https://ginnliandluck.com/',
   },
 ]

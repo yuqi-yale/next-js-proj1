@@ -2,13 +2,10 @@
 import { Icons } from "@/data/data";
 import { useEffect, useState } from "react";
 
-const Picture = [
-  { pos: '/images/1.jpeg' },
-  { pos: '/images/2.jpeg' },
-  { pos: '/images/3.jpeg' },
-  { pos: '/images/4.jpeg' },
-  { pos: '/images/5.jpeg' },
-]
+const Picture = Array.from({ length: 100 }, (_, index) => {
+  const num = String(index + 1).padStart(3, '0'); // Pad the number with leading zeros
+  return { pos: `/images/${num}.jpg` };
+});
 
 function getTodayDateKey() {
   const today = Date();
@@ -56,11 +53,11 @@ export default function HomePage() {
         className="flex items-end justify-center h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="flex space-x-20 mb-6">
+        <div className="grid-cols-3 flex space-x00 mb-6 justify-items-center">
 
           {Icons.map((icon, index) => (
             <a href={icon.herf} className="flex flex-col items-center" key={index}>
-              <icon.pos className="w-8 h-8 fill-zinc-200 stroke-zinc-200" />
+              <icon.pos className="w-24 h-6 fill-zinc-200 stroke-zinc-200" />
             </a>
           ))}
 
