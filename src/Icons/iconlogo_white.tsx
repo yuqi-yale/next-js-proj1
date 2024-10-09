@@ -2,7 +2,7 @@ import React from "react"
 
 export function iconlogo_white(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="110" height="40" viewBox="-30 -10 300 30">
+    <svg {...props} id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="-25 -10 290 30">
   <g id="_图层_2" data-name="图层 2">
     <g id="_图层_1-2" data-name="图层 1-2">
       <path d="m20.06,12.3c-1.86.24-2,.42-2,2.19v2.52c-.02.95.04,1.91.18,2.85-2.22.62-4.51.98-6.81,1.08C4.62,20.94.5,16.71.5,10.68.5,4.35,5.62.57,11.62.57c2.1.04,4.19.29,6.24.75.06,1.11.21,2.94.45,4.83l-.9.18c-.72-2.55-1.59-3.63-3.48-4.26-.91-.26-1.85-.39-2.79-.39-4.52,0-7.52,3.15-7.52,8.64,0,4.77,2.46,9.51,8.28,9.51.88.02,1.75-.16,2.55-.51.73-.34,1.14-1.13,1-1.92v-2.46c0-2.19-.24-2.43-3.12-2.64v-.87h7.71l.02.87Z" fill="#fff" stroke="#fff" stroke-miterlimit="10"/>
