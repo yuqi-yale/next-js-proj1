@@ -7,22 +7,9 @@ const Picture = Array.from({ length: 100 }, (_, index) => {
   return { pos: `/images/ans_cn/${num}.png` };
 });
 
-function getTodayDateKey() {
-  const today = Date();
-  return today.split('202')[0];
-}
-
 function getRandomImage(): string {
   const randomIndex = Math.floor(Math.random() * Picture.length);
   return Picture[randomIndex].pos;
-}
-
-function encryptImageName(imageName: string): string {
-  return window.btoa(imageName); // Base64 encode
-}
-
-function decryptImageName(encryptedImageName: string): string {
-  return window.atob(encryptedImageName); // Base64 decode
 }
 
 export default function HomePage() {
