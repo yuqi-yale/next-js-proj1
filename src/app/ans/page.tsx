@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Picture = Array.from({ length: 100 }, (_, index) => {
   const num = String(index + 1).padStart(3, '0'); // Pad the number with leading zeros
-  return { pos: `/images/cover/${num}.jpg` };
+  return { pos: `/images/ans_en/${num}.png` };
 });
 
 function getTodayDateKey() {
@@ -29,18 +29,8 @@ export default function HomePage() {
   const [backgroundImage, setBackgroundImage] = useState<string>('');
 
   useEffect(() => {
-    const todayKey = getTodayDateKey();
-    const storedEncryptedImageName = localStorage.getItem(todayKey);
-
-    if (storedEncryptedImageName) {
-      const decryptedImageName = decryptImageName(storedEncryptedImageName);
-      setBackgroundImage(decryptedImageName);
-    } else {
-      const randomImage = getRandomImage();
-      const encryptedImageName = encryptImageName(randomImage);
-      localStorage.setItem(todayKey, encryptedImageName);
-      setBackgroundImage(randomImage);
-    }
+    const randomImage = getRandomImage();
+    setBackgroundImage(randomImage);
   }, []);
 
   if (!backgroundImage) {
@@ -48,22 +38,23 @@ export default function HomePage() {
   }
 
   return (
-    <div>
-      <div
-        className="flex items-end justify-center h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="grid-cols-3 flex space-x-0 mb-6 justify-items-center">
+    <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <a href="/ans/cn">
+        <button className="absolute top-3 right-4 bg-zinc-200 text-gray-900 px-3 py-1 rounded-lg shadow-md opacity-60">
+          中文
+        </button>
+      </a>
+      
 
+      <div className="flex items-end justify-center h-full">
+        <div className="grid-cols-3 flex space-x-0 mb-6 justify-items-center">
           {Icons.map((icon, index) => (
             <a href={icon.herf} className="flex flex-col items-center" key={index}>
               <icon.pos className="w-32 h-8 fill-zinc-200 stroke-zinc-200" />
             </a>
           ))}
-
         </div>
       </div>
-
     </div>
   );
 }

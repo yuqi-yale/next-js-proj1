@@ -3,11 +3,11 @@ import { Icons } from "@/data/data";
 import { useEffect, useState } from "react";
 
 const Picture = [
-  { pos: '/images/1.jpeg' },
-  { pos: '/images/2.jpeg' },
-  { pos: '/images/3.jpeg' },
-  { pos: '/images/4.jpeg' },
-  { pos: '/images/5.jpeg' },
+  { pos: '/images/cover/1.jpeg' },
+  { pos: '/images/cover/2.jpeg' },
+  { pos: '/images/cover/3.jpeg' },
+  { pos: '/images/cover/4.jpeg' },
+  { pos: '/images/cover/5.jpeg' },
 ]
 
 export default function Page() {
