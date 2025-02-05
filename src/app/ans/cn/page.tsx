@@ -1,38 +1,50 @@
-"use client"
+"use client";
+
+import { useEffect, useState, useRef, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { Icons } from "@/data/data";
-import { useEffect, useState } from "react";
 
-const Picture = Array.from({ length: 100 }, (_, index) => {
-  const num = String(index + 1).padStart(3, '0'); // Pad the number with leading zeros
-  return { pos: `/images/ans_cn/${num}.png` };
-});
+const TOTAL_IMAGES = 5;
 
-function getRandomImage(): string {
-  const randomIndex = Math.floor(Math.random() * Picture.length);
-  return Picture[randomIndex].pos;
+function getRandomIndex() {
+  return Math.floor(Math.random() * TOTAL_IMAGES);
 }
 
-export default function HomePage() {
-  const [backgroundImage, setBackgroundImage] = useState<string>('');
+function HomePageContent() {
+  const [bgIndex, setBgIndex] = useState<number | null>(null);
+  const hasInitialized = useRef(false);
+
+  const searchParams = useSearchParams();
+  const paramIndex = searchParams.get("bg");
 
   useEffect(() => {
-    const randomImage = getRandomImage();
-    setBackgroundImage(randomImage);
-  }, []);
+    if (!hasInitialized.current) {
+      if (paramIndex) {
+        const i = parseInt(paramIndex, 10);
+        setBgIndex(i);
+        window.history.replaceState({}, "", "/ans/cn");
+      } else {
+        setBgIndex(getRandomIndex());
+      }
+      hasInitialized.current = true;
+    }
+  }, [paramIndex]);
 
-  if (!backgroundImage) {
-    return null;
-  }
+  if (bgIndex === null) return null;
+
+  const numString = String(bgIndex + 1).padStart(3, "0");
+  const backgroundImage = `/images/ans_cn/${numString}.png`;
 
   return (
-    <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <a href="/ans">
+    <div
+      className="relative h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <a href={`/ans?bg=${bgIndex}`}>
         <button className="absolute top-3 right-4 bg-zinc-200 text-gray-900 px-3 py-1 rounded-lg shadow-md opacity-60">
-        En
-      </button>
+          En
+        </button>
       </a>
-      
-
       <div className="flex items-end justify-center h-full">
         <div className="grid-cols-3 flex space-x-0 mb-6 justify-items-center">
           {Icons.map((icon, index) => (
@@ -43,5 +55,13 @@ export default function HomePage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomePageContent />
+    </Suspense>
   );
 }
