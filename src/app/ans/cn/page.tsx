@@ -46,7 +46,7 @@ function HomePageContent() {
         </button>
       </a>
       <div className="flex items-end justify-center h-full">
-        <div className="grid-cols-3 flex space-x-0 mb-6 justify-items-center">
+        <div className="grid-cols-3 flex space-x-0 mb-20 justify-items-center">
           {Icons.map((icon, index) => (
             <a href={icon.herf} className="flex flex-col items-center" key={index}>
               <icon.pos className="w-32 h-8 fill-zinc-200 stroke-zinc-200" />
@@ -60,7 +60,7 @@ function HomePageContent() {
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div></div>}>
       <HomePageContent />
     </Suspense>
   );
