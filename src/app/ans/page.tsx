@@ -4,19 +4,18 @@ import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Icons } from "@/data/data";
 
-const TOTAL_IMAGES = 5;
+const TOTAL_IMAGES = 300;
 
 function getRandomIndex() {
-  return Math.floor(Math.random() * TOTAL_IMAGES); // returns 0..99
+  return Math.floor(Math.random() * TOTAL_IMAGES);
 }
 
 function HomePageContent() {
   const [bgIndex, setBgIndex] = useState<number | null>(null);
   const hasInitialized = useRef(false);
 
-  // Next.js App Router hook: read query params
   const searchParams = useSearchParams();
-  const paramIndex = searchParams.get("bg"); // e.g. "12" if URL is /ans?bg=12
+  const paramIndex = searchParams.get("bg");
 
   useEffect(() => {
     if (!hasInitialized.current) {

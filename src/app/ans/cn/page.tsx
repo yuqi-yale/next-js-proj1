@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Icons } from "@/data/data";
 
-const TOTAL_IMAGES = 5;
+const TOTAL_IMAGES = 300;
 
 function getRandomIndex() {
   return Math.floor(Math.random() * TOTAL_IMAGES);
