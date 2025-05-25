@@ -56,9 +56,12 @@ export default function HomePage() {
         <div className="grid-cols-3 flex space-x00 mb-6 justify-items-center">
 
           {Icons.map((icon, index) => (
-            <a href={icon.herf} className="flex flex-col items-center" key={index}>
+            // <a href={icon.herf} className="flex flex-col items-center" key={index}>
+            //   <icon.pos className="w-24 h-6 fill-zinc-200 stroke-zinc-200" />
+            // </a>
+            <div className="flex flex-col items-center" key={index}>
               <icon.pos className="w-24 h-6 fill-zinc-200 stroke-zinc-200" />
-            </a>
+            </div>
           ))}
 
         </div>
